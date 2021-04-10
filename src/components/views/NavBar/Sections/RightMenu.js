@@ -2,7 +2,7 @@
 import React from "react";
 import { Menu } from "antd";
 import axios from "axios";
-import { USER_SERVER } from "../../../Config";
+import { API_SERVER } from "../../../Config";
 import { withRouter } from "react-router-dom";
 import { useSelector } from "react-redux";
 const Upload = require("../../../../assets/images/upload.png");
@@ -11,7 +11,7 @@ function RightMenu(props) {
   const user = useSelector((state) => state.user);
 
   const logoutHandler = () => {
-    axios.get("/users/logout").then((response) => {
+    axios.get(`${API_SERVER}/users/logout`).then((response) => {
       if (response.status === 200) {
         props.history.push("/login");
       } else {

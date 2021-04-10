@@ -3,7 +3,7 @@ import { Typography, Popover, Button } from "antd";
 import axios from "axios";
 import "./favorite.css";
 import { useSelector } from "react-redux";
-import { IMAGE_BASE_URL, POSTER_SIZE } from "../../Config";
+import { IMAGE_BASE_URL, POSTER_SIZE, API_SERVER } from "../../Config";
 
 const { Title } = Typography;
 
@@ -19,7 +19,7 @@ function FavoritePage() {
   }, []);
 
   const fetchFavoredMovie = () => {
-    axios.post("/favorite/getFavoredMovie", variable).then((response) => {
+    axios.post(`/favorite/getFavoredMovie`, variable).then((response) => {
       if (response.data.success) {
         console.log(response.data.favorites);
         setFavorites(response.data.favorites);
@@ -36,7 +36,7 @@ function FavoritePage() {
       userFrom: userFrom,
     };
 
-    axios.post("/favorite/removeFromFavorite", variables).then((response) => {
+    axios.post(`/favorite/removeFromFavorite`, variables).then((response) => {
       if (response.data.success) {
         fetchFavoredMovie();
       } else {
