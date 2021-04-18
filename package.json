@@ -42,7 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "http-proxy-middleware": "^0.19.2"
-  }
+  "proxy": "https://imdbcloneapi.herokuapp.com/api"
 }

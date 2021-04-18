@@ -153,13 +153,6 @@ function LoginPage(props) {
                 >
                   Remember me
                 </Checkbox>
-                <a
-                  className="login-form-forgot"
-                  href="/reset_user"
-                  style={{ float: "right" }}
-                >
-                  forgot password
-                </a>
                 <div>
                   <Button
                     type="primary"
